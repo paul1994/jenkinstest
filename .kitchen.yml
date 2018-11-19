@@ -1,6 +1,17 @@
 ---
 driver:
-  name: vagrant
+  name: ec2
+  aws_ssh_key_id:  pbradford_aws
+  region: us-west-2
+  availability_zone: a
+  security_group_ids: ["sg-0743bbb8cae7dd2e5"]
+  subnet_id: subnet-7424b611
+  # image_id: ami-8db945ed
+  instance_type: t2.small
+  tags:
+     created-by : "pbradford"
+     Name : "pbtestserver-jenkins"
+     OwnerEmail : "pbradford@chef.io"
 
 provisioner:
   name: chef_zero
