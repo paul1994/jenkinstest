@@ -1,0 +1,62 @@
+I, [2018-11-20T07:49:39.020503 #6181]  INFO -- default-ec2: -----> Creating <default-ec2>...
+I, [2018-11-20T07:49:39.020644 #6181]  INFO -- default-ec2: [Dummy] Create on instance=#<Kitchen::Instance:0x00007fb76d949158> with state={:my_id=>"default-ec2-1542728979"}
+I, [2018-11-20T07:49:39.021589 #6181]  INFO -- default-ec2: Finished creating <default-ec2> (0m0.00s).
+I, [2018-11-20T07:49:39.021729 #6181]  INFO -- default-ec2: -----> Converging <default-ec2>...
+I, [2018-11-20T07:49:39.022233 #6181]  INFO -- default-ec2: Preparing files for transfer
+I, [2018-11-20T07:49:39.022355 #6181]  INFO -- default-ec2: Preparing dna.json
+I, [2018-11-20T07:49:39.022904 #6181]  INFO -- default-ec2: Resolving cookbook dependencies with Berkshelf 7.0.6...
+I, [2018-11-20T07:49:42.284702 #6181]  INFO -- default-ec2: Removing non-cookbook files before transfer
+I, [2018-11-20T07:49:42.306374 #6181]  INFO -- default-ec2: Preparing validation.pem
+I, [2018-11-20T07:49:42.308812 #6181]  INFO -- default-ec2: Preparing client.rb
+I, [2018-11-20T07:49:42.312347 #6181]  INFO -- default-ec2: [SSH] connection failed, retrying in 1 seconds (#<Errno::ECONNREFUSED: Connection refused - connect(2) for 127.0.0.1:22>)
+I, [2018-11-20T07:49:43.317636 #6181]  INFO -- default-ec2: [SSH] connection failed, retrying in 1 seconds (#<Errno::ECONNREFUSED: Connection refused - connect(2) for 127.0.0.1:22>)
+I, [2018-11-20T07:49:44.319685 #6181]  INFO -- default-ec2: [SSH] connection failed, retrying in 1 seconds (#<Errno::ECONNREFUSED: Connection refused - connect(2) for 127.0.0.1:22>)
+I, [2018-11-20T07:49:45.323597 #6181]  INFO -- default-ec2: [SSH] connection failed, retrying in 1 seconds (#<Errno::ECONNREFUSED: Connection refused - connect(2) for 127.0.0.1:22>)
+W, [2018-11-20T07:49:46.327900 #6181]  WARN -- default-ec2: [SSH] connection failed, terminating (#<Errno::ECONNREFUSED: Connection refused - connect(2) for 127.0.0.1:22>)
+E, [2018-11-20T07:49:46.364282 #6181] ERROR -- default-ec2: Converge failed on instance <default-ec2>.
+E, [2018-11-20T07:49:46.364408 #6181] ERROR -- default-ec2: ------Exception-------
+E, [2018-11-20T07:49:46.364433 #6181] ERROR -- default-ec2: Class: Kitchen::ActionFailed
+E, [2018-11-20T07:49:46.364451 #6181] ERROR -- default-ec2: Message: SSH session could not be established
+E, [2018-11-20T07:49:46.364470 #6181] ERROR -- default-ec2: ----------------------
+E, [2018-11-20T07:49:46.364487 #6181] ERROR -- default-ec2: ------Backtrace-------
+E, [2018-11-20T07:49:46.364503 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/provisioner/base.rb:91:in `rescue in call'
+E, [2018-11-20T07:49:46.364519 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/provisioner/base.rb:67:in `call'
+E, [2018-11-20T07:49:46.364536 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:408:in `block in converge_action'
+E, [2018-11-20T07:49:46.364553 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:551:in `synchronize_or_call'
+E, [2018-11-20T07:49:46.364572 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:513:in `block in action'
+E, [2018-11-20T07:49:46.364590 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/2.5.0/benchmark.rb:293:in `measure'
+E, [2018-11-20T07:49:46.364606 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:512:in `action'
+E, [2018-11-20T07:49:46.364624 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:404:in `converge_action'
+E, [2018-11-20T07:49:46.364640 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:382:in `block (2 levels) in transition_to'
+E, [2018-11-20T07:49:46.364658 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/lifecycle_hooks.rb:45:in `run_with_hooks'
+E, [2018-11-20T07:49:46.364691 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:381:in `block in transition_to'
+E, [2018-11-20T07:49:46.364709 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:380:in `each'
+E, [2018-11-20T07:49:46.364727 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:380:in `transition_to'
+E, [2018-11-20T07:49:46.364743 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:140:in `converge'
+E, [2018-11-20T07:49:46.364761 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-11-20T07:49:46.364777 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-11-20T07:49:46.364795 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-11-20T07:49:46.364812 #6181] ERROR -- default-ec2: ----End Backtrace-----
+E, [2018-11-20T07:49:46.364828 #6181] ERROR -- default-ec2: ---Nested Exception---
+E, [2018-11-20T07:49:46.364845 #6181] ERROR -- default-ec2: Class: Kitchen::Transport::SshFailed
+E, [2018-11-20T07:49:46.364863 #6181] ERROR -- default-ec2: Message: SSH session could not be established
+E, [2018-11-20T07:49:46.364878 #6181] ERROR -- default-ec2: ----------------------
+E, [2018-11-20T07:49:46.364895 #6181] ERROR -- default-ec2: ------Backtrace-------
+E, [2018-11-20T07:49:46.364910 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/provisioner/base.rb:91:in `rescue in call'
+E, [2018-11-20T07:49:46.364928 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/provisioner/base.rb:67:in `call'
+E, [2018-11-20T07:49:46.364946 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:408:in `block in converge_action'
+E, [2018-11-20T07:49:46.364961 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:551:in `synchronize_or_call'
+E, [2018-11-20T07:49:46.364979 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:513:in `block in action'
+E, [2018-11-20T07:49:46.364995 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/2.5.0/benchmark.rb:293:in `measure'
+E, [2018-11-20T07:49:46.365011 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:512:in `action'
+E, [2018-11-20T07:49:46.365027 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:404:in `converge_action'
+E, [2018-11-20T07:49:46.365045 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:382:in `block (2 levels) in transition_to'
+E, [2018-11-20T07:49:46.365061 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/lifecycle_hooks.rb:45:in `run_with_hooks'
+E, [2018-11-20T07:49:46.365079 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:381:in `block in transition_to'
+E, [2018-11-20T07:49:46.365094 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:380:in `each'
+E, [2018-11-20T07:49:46.365110 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:380:in `transition_to'
+E, [2018-11-20T07:49:46.365140 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/instance.rb:140:in `converge'
+E, [2018-11-20T07:49:46.365157 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-11-20T07:49:46.365173 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-11-20T07:49:46.365190 #6181] ERROR -- default-ec2: /opt/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.23.2/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-11-20T07:49:46.365206 #6181] ERROR -- default-ec2: ----End Backtrace-----

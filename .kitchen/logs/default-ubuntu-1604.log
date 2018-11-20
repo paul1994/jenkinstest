@@ -1,0 +1,98 @@
+I, [2018-11-20T12:46:40.989290 #13561]  INFO -- default-ubuntu-1604: -----> Converging <default-ubuntu-1604>...
+I, [2018-11-20T12:46:40.990112 #13561]  INFO -- default-ubuntu-1604: Preparing files for transfer
+I, [2018-11-20T12:46:40.990220 #13561]  INFO -- default-ubuntu-1604: Preparing dna.json
+I, [2018-11-20T12:46:40.990634 #13561]  INFO -- default-ubuntu-1604: Resolving cookbook dependencies with Berkshelf 7.0.6...
+I, [2018-11-20T12:46:44.399236 #13561]  INFO -- default-ubuntu-1604: Removing non-cookbook files before transfer
+I, [2018-11-20T12:46:44.431438 #13561]  INFO -- default-ubuntu-1604: Preparing validation.pem
+I, [2018-11-20T12:46:44.432625 #13561]  INFO -- default-ubuntu-1604: Preparing client.rb
+I, [2018-11-20T12:46:45.003788 #13561]  INFO -- default-ubuntu-1604: -----> Chef Omnibus installation detected (install only if missing)
+I, [2018-11-20T12:46:45.119248 #13561]  INFO -- default-ubuntu-1604: Transferring files to <default-ubuntu-1604>
+I, [2018-11-20T12:47:05.956703 #13561]  INFO -- default-ubuntu-1604: Starting Chef Client, version 14.7.17
+I, [2018-11-20T12:47:06.833468 #13561]  INFO -- default-ubuntu-1604: resolving cookbooks for run list: ["jenkinswrapper::default"]
+I, [2018-11-20T12:47:07.120543 #13561]  INFO -- default-ubuntu-1604: Synchronizing Cookbooks:
+I, [2018-11-20T12:47:07.121292 #13561]  INFO -- default-ubuntu-1604:   - jenkinswrapper (0.1.0)
+I, [2018-11-20T12:47:07.121628 #13561]  INFO -- default-ubuntu-1604:   - jenkins (6.2.1)
+I, [2018-11-20T12:47:07.132916 #13561]  INFO -- default-ubuntu-1604:   - java (3.1.1)
+I, [2018-11-20T12:47:07.140393 #13561]  INFO -- default-ubuntu-1604:   - runit (4.3.0)
+I, [2018-11-20T12:47:07.140970 #13561]  INFO -- default-ubuntu-1604:   - dpkg_autostart (0.2.0)
+I, [2018-11-20T12:47:07.141511 #13561]  INFO -- default-ubuntu-1604:   - windows (5.2.2)
+I, [2018-11-20T12:47:07.142645 #13561]  INFO -- default-ubuntu-1604:   - packagecloud (1.0.1)
+I, [2018-11-20T12:47:07.143075 #13561]  INFO -- default-ubuntu-1604:   - homebrew (5.0.8)
+I, [2018-11-20T12:47:07.143603 #13561]  INFO -- default-ubuntu-1604:   - yum-epel (3.3.0)
+I, [2018-11-20T12:47:07.144069 #13561]  INFO -- default-ubuntu-1604: Installing Cookbook Gems:
+I, [2018-11-20T12:47:07.160348 #13561]  INFO -- default-ubuntu-1604: Compiling Cookbooks...
+I, [2018-11-20T12:47:07.319175 #13561]  INFO -- default-ubuntu-1604: Converging 31 resources
+I, [2018-11-20T12:47:07.319550 #13561]  INFO -- default-ubuntu-1604: Recipe: java::notify
+I, [2018-11-20T12:47:07.320026 #13561]  INFO -- default-ubuntu-1604:   * log[jdk-version-changed] action nothing (skipped due to action :nothing)
+I, [2018-11-20T12:47:07.320311 #13561]  INFO -- default-ubuntu-1604: Recipe: java::openjdk
+I, [2018-11-20T12:47:08.160044 #13561]  INFO -- default-ubuntu-1604:   * apt_repository[openjdk-r-ppa] action add
+I, [2018-11-20T12:47:08.161962 #13561]  INFO -- default-ubuntu-1604:     * execute[apt-cache gencaches] action nothing (skipped due to action :nothing)
+I, [2018-11-20T12:47:08.162565 #13561]  INFO -- default-ubuntu-1604:     * apt_update[openjdk-r-ppa] action nothing (skipped due to action :nothing)
+I, [2018-11-20T12:47:08.375128 #13561]  INFO -- default-ubuntu-1604:     * execute[install-key DA1A4A13543B466853BAF164EB9B1D8886F44E2A] action run (skipped due to not_if)
+I, [2018-11-20T12:47:08.376590 #13561]  INFO -- default-ubuntu-1604:     * file[/etc/apt/sources.list.d/openjdk-r-ppa.list] action create (up to date)
+I, [2018-11-20T12:47:08.376914 #13561]  INFO -- default-ubuntu-1604:      (up to date)
+I, [2018-11-20T12:47:08.456544 #13561]  INFO -- default-ubuntu-1604:   * apt_package[openjdk-8-jdk, openjdk-8-jre-headless] action install (up to date)
+I, [2018-11-20T12:47:10.644741 #13561]  INFO -- default-ubuntu-1604:   * java_alternatives[set-java-alternatives] action set (up to date)
+I, [2018-11-20T12:47:10.645225 #13561]  INFO -- default-ubuntu-1604: Recipe: java::default_java_symlink
+I, [2018-11-20T12:47:10.648798 #13561]  INFO -- default-ubuntu-1604:   * link[/usr/lib/jvm/default-java] action create (up to date)
+I, [2018-11-20T12:47:10.649120 #13561]  INFO -- default-ubuntu-1604: Recipe: java::set_java_home
+I, [2018-11-20T12:47:10.650504 #13561]  INFO -- default-ubuntu-1604:   * directory[/etc/profile.d] action create (up to date)
+I, [2018-11-20T12:47:10.654416 #13561]  INFO -- default-ubuntu-1604:   * template[/etc/profile.d/jdk.sh] action create (up to date)
+I, [2018-11-20T12:47:10.655016 #13561]  INFO -- default-ubuntu-1604: Recipe: jenkins::_master_package
+I, [2018-11-20T12:47:10.701832 #13561]  INFO -- default-ubuntu-1604:   * apt_package[apt-transport-https] action install (up to date)
+I, [2018-11-20T12:47:10.706648 #13561]  INFO -- default-ubuntu-1604:   * apt_repository[jenkins] action add
+I, [2018-11-20T12:47:11.092132 #13561]  INFO -- default-ubuntu-1604:     * remote_file[/tmp/kitchen/cache/https___pkg_jenkins_io_debian-stable_jenkins_io_key] action create (up to date)
+I, [2018-11-20T12:47:11.243513 #13561]  INFO -- default-ubuntu-1604:     * execute[apt-key add /tmp/kitchen/cache/https___pkg_jenkins_io_debian-stable_jenkins_io_key] action run (skipped due to not_if)
+I, [2018-11-20T12:47:11.246976 #13561]  INFO -- default-ubuntu-1604:     * execute[apt-cache gencaches] action nothing (skipped due to action :nothing)
+I, [2018-11-20T12:47:11.247546 #13561]  INFO -- default-ubuntu-1604:     * apt_update[jenkins] action nothing (skipped due to action :nothing)
+I, [2018-11-20T12:47:11.248018 #13561]  INFO -- default-ubuntu-1604:     * file[/etc/apt/sources.list.d/jenkins.list] action create (up to date)
+I, [2018-11-20T12:47:11.248320 #13561]  INFO -- default-ubuntu-1604:      (up to date)
+I, [2018-11-20T12:47:11.248485 #13561]  INFO -- default-ubuntu-1604: Recipe: <Dynamically Defined Resource>
+I, [2018-11-20T12:47:11.261467 #13561]  INFO -- default-ubuntu-1604:   * dpkg_autostart[bin_file] action create
+I, [2018-11-20T12:47:11.261899 #13561]  INFO -- default-ubuntu-1604:     * template[dpkg_autostart_file] action create (up to date)
+I, [2018-11-20T12:47:11.262096 #13561]  INFO -- default-ubuntu-1604:      (up to date)
+I, [2018-11-20T12:47:11.262427 #13561]  INFO -- default-ubuntu-1604: Recipe: jenkins::_master_package
+I, [2018-11-20T12:47:11.262732 #13561]  INFO -- default-ubuntu-1604:   * dpkg_autostart[jenkins] action nothing (skipped due to action :nothing)
+I, [2018-11-20T12:47:11.327714 #13561]  INFO -- default-ubuntu-1604:   * apt_package[jenkins] action install (up to date)
+I, [2018-11-20T12:47:11.331476 #13561]  INFO -- default-ubuntu-1604:   * directory[/var/lib/jenkins] action create (up to date)
+I, [2018-11-20T12:47:11.332651 #13561]  INFO -- default-ubuntu-1604:   * directory[/var/log/jenkins] action create (up to date)
+I, [2018-11-20T12:47:11.335161 #13561]  INFO -- default-ubuntu-1604:   * directory[fix permissions for /var/cache/jenkins] action create (up to date)
+I, [2018-11-20T12:47:11.354392 #13561]  INFO -- default-ubuntu-1604:   * directory[fix permissions for /var/lib/jenkins] action create (up to date)
+I, [2018-11-20T12:47:11.354790 #13561]  INFO -- default-ubuntu-1604:   * directory[fix permissions for /var/run/jenkins] action create (up to date)
+I, [2018-11-20T12:47:11.355041 #13561]  INFO -- default-ubuntu-1604:   * template[/etc/default/jenkins] action create (up to date)
+I, [2018-11-20T12:47:11.411684 #13561]  INFO -- default-ubuntu-1604:   * service[jenkins] action enable (up to date)
+I, [2018-11-20T12:47:11.467328 #13561]  INFO -- default-ubuntu-1604:   * service[jenkins] action start (up to date)
+I, [2018-11-20T12:47:11.467813 #13561]  INFO -- default-ubuntu-1604: Recipe: jenkinswrapper::master
+I, [2018-11-20T12:47:11.469473 #13561]  INFO -- default-ubuntu-1604:   * jenkins_plugin[ssh] action install
+I, [2018-11-20T12:47:11.469570 #13561]  INFO -- default-ubuntu-1604:   Recipe: <Dynamically Defined Resource>
+I, [2018-11-20T12:47:12.510178 #13561]  INFO -- default-ubuntu-1604:     * remote_file[/tmp/kitchen/cache/update-center.json] action create (up to date)
+I, [2018-11-20T12:47:12.529799 #13561]  INFO -- default-ubuntu-1604:     * file[/tmp/kitchen/cache/extracted-update-center.json] action create (up to date)
+I, [2018-11-20T12:47:12.907049 #13561]  INFO -- default-ubuntu-1604:      (up to date)
+I, [2018-11-20T12:47:12.907555 #13561]  INFO -- default-ubuntu-1604: Recipe: jenkinswrapper::master
+I, [2018-11-20T12:47:12.963022 #13561]  INFO -- default-ubuntu-1604:   * jenkins_plugin[credentials] action install (up to date)
+I, [2018-11-20T12:47:13.007352 #13561]  INFO -- default-ubuntu-1604:   * jenkins_plugin[greenballs] action install (up to date)
+I, [2018-11-20T12:47:13.065008 #13561]  INFO -- default-ubuntu-1604:   * jenkins_plugin[pam-auth] action install (up to date)
+I, [2018-11-20T12:47:13.108060 #13561]  INFO -- default-ubuntu-1604:   * jenkins_plugin[matrix-auth] action install (up to date)
+I, [2018-11-20T12:47:13.108816 #13561]  INFO -- default-ubuntu-1604:   * ruby_block[jenkins_restart_flag] action nothing (skipped due to action :nothing)
+I, [2018-11-20T12:47:13.109347 #13561]  INFO -- default-ubuntu-1604:   * jenkins_command[safe-restart] action execute (skipped due to only_if)
+I, [2018-11-20T12:47:13.145833 #13561]  INFO -- default-ubuntu-1604:   * jenkins_user[grumpy] action create
+I, [2018-11-20T12:47:13.146612 #13561]  INFO -- default-ubuntu-1604:   Recipe: <Dynamically Defined Resource>
+I, [2018-11-20T12:47:13.156375 #13561]  INFO -- default-ubuntu-1604:     * remote_file[/tmp/kitchen/cache/jenkins-cli.jar] action create (up to date)
+I, [2018-11-20T12:47:16.271403 #13561]  INFO -- default-ubuntu-1604:     - Create jenkins_user[grumpy]
+I, [2018-11-20T12:47:16.271855 #13561]  INFO -- default-ubuntu-1604: Recipe: jenkinswrapper::master
+I, [2018-11-20T12:47:19.353323 #13561]  INFO -- default-ubuntu-1604:   * jenkins_user[panther] action create
+I, [2018-11-20T12:47:19.354070 #13561]  INFO -- default-ubuntu-1604:     - Create jenkins_user[panther]
+I, [2018-11-20T12:47:22.423971 #13561]  INFO -- default-ubuntu-1604:   * jenkins_user[chef] action create
+I, [2018-11-20T12:47:22.445133 #13561]  INFO -- default-ubuntu-1604:     - Create jenkins_user[chef]
+I, [2018-11-20T12:47:22.466037 #13561]  INFO -- default-ubuntu-1604:   * ruby_block[load jenkins credential] action run
+I, [2018-11-20T12:47:22.466293 #13561]  INFO -- default-ubuntu-1604:     - execute the ruby block load jenkins credential
+I, [2018-11-20T12:47:22.467626 #13561]  INFO -- default-ubuntu-1604:   * jenkins_script[jenkins auth] action execute
+I, [2018-11-20T12:47:22.467738 #13561]  INFO -- default-ubuntu-1604:   Recipe: <Dynamically Defined Resource>
+I, [2018-11-20T12:47:22.468296 #13561]  INFO -- default-ubuntu-1604:     * file[/tmp/kitchen/cache/jenkins-key] action create (up to date)
+I, [2018-11-20T12:47:25.758305 #13561]  INFO -- default-ubuntu-1604:     - Execute script jenkins_script[jenkins auth]
+I, [2018-11-20T12:47:25.782708 #13561]  INFO -- default-ubuntu-1604: 
+I, [2018-11-20T12:47:25.782807 #13561]  INFO -- default-ubuntu-1604: Running handlers:
+I, [2018-11-20T12:47:25.783257 #13561]  INFO -- default-ubuntu-1604: Running handlers complete
+I, [2018-11-20T12:47:25.783559 #13561]  INFO -- default-ubuntu-1604: Chef Client finished, 5/46 resources updated in 19 seconds
+I, [2018-11-20T12:47:25.799411 #13561]  INFO -- default-ubuntu-1604: Downloading files from <default-ubuntu-1604>
+I, [2018-11-20T12:47:25.845942 #13561]  INFO -- default-ubuntu-1604: Finished converging <default-ubuntu-1604> (0m44.85s).
