@@ -12,13 +12,23 @@ include_recipe 'jenkins::master'
 
 # jenkins_plugin 'git' do
 # end
-
-['ssh', 'git','structs','junit','mailer','git-client','credentials','apache-httpcomponents-client-4-api','ssh-credentials','jsch','scm-api','workflow-scm-step','workflow-step-api','chef', 'chef-cookbook-pipeline'   ].each do |plugin|
+jenkins_plugins = %w(
+  ssh
+  git
+  structs
+  junit
+  mailer
+  git-client
+  credentials
+)
+jenkins_plugins.each do |plugin|
   jenkins_plugin "#{plugin}" do
-  notifies :restart, 'service[jenkins]', :immediately
+#   notifies :restart, 'service[jenkins]', :delayed
    end
 end
+# plugins taken out of the loop above
+#,'chef-cookbook-pipeline'
 
-service 'jenkins' do
-    action :nothing
+jenkins_command 'safe-restart' do
+    action :execute
 end
