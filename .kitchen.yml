@@ -7,10 +7,10 @@ driver:
   security_group_ids: ["sg-0743bbb8cae7dd2e5"]
   subnet_id: subnet-7424b611
   # image_id: ami-8db945ed
-  instance_type: t2.small
+  instance_type: t2.medium
   tags:
      created-by : "pbradford"
-     Name : "pbtestserver-jenkins"
+     Name : "pbtest-jenkins"
      OwnerEmail : "pbradford@chef.io"
 
 provisioner:
@@ -25,7 +25,22 @@ verifier:
 
 platforms:
   - name: ubuntu-16.04
+    # driver:
+    # name: ec2
+    # aws_ssh_key_id:  pbradford_aws
+    # region: us-west-2
+    # availability_zone: a
+    # security_group_ids: ["sg-0743bbb8cae7dd2e5"]
+    # subnet_id: subnet-7424b611
+    # # image_id: ami-8db945ed
+    # instance_type: t2.medium
+    # tags:
+    #   created-by : "pbradford"
+    #   Name : "pbtest-jenkins"
+    #   OwnerEmail : "pbradford@chef.io"
 
+transport:
+ ssh_key: ~/Downloads/pbradford_aws.pem
 
 suites:
   - name: default

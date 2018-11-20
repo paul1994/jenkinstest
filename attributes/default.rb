@@ -1,4 +1,5 @@
 default['jenkins']['master']['install_method'] = 'package'
+default['jenkins']['AuthorizationStrategy'] = 'FullControlOnceLoggedInAuthorizationStrategy' #eg: 'FullControlOnceLoggedInAuthorizationStrategy'
 # ## java attributes
 # default['java']['jdk_version'] = '8'
 # default['java']['install_flavor'] = 'oracle'
