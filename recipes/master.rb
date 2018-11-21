@@ -12,52 +12,6 @@ include_recipe 'jenkins::master'
 # jenkins_plugin 'ssh' do
 # end
 
-# Flag set to true if plugin is installed or updated and jenkins will be restarted.
-restart_required = false
-
-# jenkins_plugins in a ruby for each loop 'git' do
-jenkins_plugins = %w(
-  ssh
-  credentials
-  greenballs
-  pam-auth
-  matrix-auth
-)
-# chef-cookbook-pipeline 
-# blueocean
-#  ssh-credentials
-#  ssh-slaves
-#  script-security
-#  git
-#  structs
-#  junit
-#  mailer
-#  git-client
-# github-oauth
-
-jenkins_plugins.each do |plugin|
-  plugin, version = plugin.split('=')
-  jenkins_plugin plugin do
-    version version if version
-    notifies :create, "ruby_block[jenkins_restart_flag]", :immediately
-   end
-end
-
-
-# Is notified only when a 'jenkins_plugin' is installed or updated.
-ruby_block "jenkins_restart_flag" do
-  block do
-    restart_required = true
-  end
-  action :nothing
-end
-
-# Using the jenkins cookbook restart after plugin install
-jenkins_command 'safe-restart' do
-    only_if { restart_required }
-end
-
-
 # You will probably want to add some users so you can login!
 
 # Turn on basic authentication
@@ -76,6 +30,7 @@ end
 #     instance.save()
 #   EOH
 # end
+
 # Create a Jenkins user with specific attributes
 jenkins_user 'grumpy' do
   full_name  'Grumpy Dwarf'
