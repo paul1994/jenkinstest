@@ -1,0 +1,27 @@
+.vagrant
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+*.swp
+# ignore all logs
+*.log
+
+# Bundler
+Gemfile.lock
+gems.locked
+bin/*
+.bundle/*
+
+# test kitchen
+# Ignoring Test kitchen files
+.kitchen/
+.kitchen.local.yml
+.kitchen.local
+
+# Chef
+Berksfile.lock
+.zero-knife.rb
+Policyfile.lock.json
