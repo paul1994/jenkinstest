@@ -7,7 +7,7 @@
 *.un~
 *.swp
 # ignore all logs
-*.log
+**.log
 
 # Bundler
 Gemfile.lock
@@ -17,7 +17,7 @@ bin/*
 
 # test kitchen
 # Ignoring Test kitchen files
-.kitchen/*
+.kitchen/
 .kitchen.local.yml
 .kitchen.yml
 
