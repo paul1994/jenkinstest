@@ -19,7 +19,7 @@ bin/*
 # Ignoring Test kitchen files
 .kitchen/
 .kitchen.local.yml
-.kitchen.local
+.kitchen.yml
 
 # Chef
 Berksfile.lock
