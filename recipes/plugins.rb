@@ -8,9 +8,13 @@
 restart_required = false
 
 # jenkins_plugins in a ruby for each loop 'git' do
+# Also example of pinning a specific plugin version
 jenkins_plugins = %w(
   ssh
+  ssh-credentials
+  structs
   credentials
+  jsch=0.1.54.2
   greenballs
   pam-auth
   matrix-auth
@@ -31,7 +35,8 @@ jenkins_plugins.each do |plugin|
   plugin, version = plugin.split('=')
   jenkins_plugin plugin do
     version version if version
-    notifies :create, "ruby_block[jenkins_restart_flag]", :immediately
+    install_deps true
+    notifies :run, "ruby_block[jenkins_restart_flag]", :immediately
    end
 end
 
@@ -42,11 +47,6 @@ ruby_block "jenkins_restart_flag" do
     restart_required = true
   end
   action :nothing
-end
-
-# Using the jenkins cookbook restart after plugin install
-jenkins_command 'safe-restart' do
-    only_if { restart_required }
 end
 
 jenkins_script 'get list of latest plugins' do
@@ -62,3 +62,29 @@ jenkins_script 'get list of latest plugins' do
       ::File.mtime(update_file) > Time.now - update_frequency
   end
 end
+
+# Using the jenkins cookbook restart after plugin install
+jenkins_command 'safe-restart' do
+    only_if { restart_required }
+end
+
+# jenkins_script 'get list of latest plugins' do
+#   command <<-eos.gsub(/^\s+/, '')
+# import jenkins.model.Jenkins;
+
+# pm = Jenkins.instance.pluginManager
+
+# uc = Jenkins.instance.updateCenter
+# updated = false
+# pm.plugins.each { plugin ->
+#   if (uc.getPlugin(plugin.shortName).version != plugin.version) {
+#     update = uc.getPlugin(plugin.shortName).deploy(true)
+#     update.get()
+#     updated = true
+#   }
+# }
+# if (updated) {
+#   Jenkins.instance.restart()
+# }
+#   eos
+# end

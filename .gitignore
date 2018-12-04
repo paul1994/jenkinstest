@@ -27,3 +27,10 @@ Berksfile.lock
 Policyfile.lock.json
 # test item
 
+# Terraform items
+.terraform
+terraform.tfvars
+terraform.tfstate
+terraform.tfstate.backup
+aws-security/
+attributes.yml
